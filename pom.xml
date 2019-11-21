@@ -21,9 +21,9 @@
     <version>1.0-SNAPSHOT</version>
 
     <modules>
-        <module>shop-ui</module>
-        <module>shop-admin-ui</module>
         <module>shop-database</module>
+        <module>shop-user-ui</module>
+        <module>shop-admin-ui</module>
     </modules>
 
     <dependencies>

@@ -14,6 +14,6 @@ import org.springframework.context.annotation.PropertySource;
 
 @Configuration
 @PropertySource("classpath:private.properties")
-@ComponentScan("ru.vlsv.shopui")
+@ComponentScan("ru.vlsv.shopuserui")
 public class ShopUIConfig {
 }

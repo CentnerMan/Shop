@@ -1,13 +1,13 @@
-package ru.vlsv.shopui;
+package ru.vlsv.shopuserui;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ShopUiApplication {
+public class ShopUserUiApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ShopUiApplication.class, args);
+        SpringApplication.run(ShopUserUiApplication.class, args);
     }
 
 }
