@@ -1,5 +1,9 @@
 package ru.vlsv.shopadminui.configs;
 
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+
 /**
  * GeekBrains Java, Shop.
  *
@@ -8,5 +12,8 @@ package ru.vlsv.shopadminui.configs;
  * @link https://github.com/Centnerman
  */
 
-public class AppConfig {
+@Configuration
+@PropertySource("classpath:private.properties")
+@ComponentScan("ru.vlsv.shopadminui")
+public class ShopAdminUIConfig {
 }
