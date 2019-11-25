@@ -1,33 +1,23 @@
 package ru.vlsv.shopdatabase.entities;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
-import java.util.Collection;
-
-/**
- * GeekBrains Java, ShopSpring.
- *
- * @author Anatoly Lebedev
- * @version 1.0.0 10.11.2019
- * @link https://github.com/Centnerman
- */
+import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-@Data
-@NoArgsConstructor
 @Table(name = "users")
-public class User {
+public class User implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "username")
+    @Column(name = "username", unique = true, nullable = false)
     private String username;
 
-    @Column(name = "password")
+    @Column(name = "password", nullable = false)
     private String password;
 
     @Column(name = "first_name")
@@ -43,18 +33,18 @@ public class User {
     @JoinTable(name = "users_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private Collection<Role> roles;
+    private Set<Role> roles;
+
+    public User() {
+        this.roles = new HashSet<>();
+    }
 
     public User(String username, String password, String firstName, String lastName, String email) {
-        this.username = username;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
+        this(username, password, firstName, lastName, email, new HashSet<>());
     }
 
     public User(String username, String password, String firstName, String lastName, String email,
-                Collection<Role> roles) {
+                Set<Role> roles) {
         this.username = username;
         this.password = password;
         this.firstName = firstName;
@@ -63,9 +53,65 @@ public class User {
         this.roles = roles;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
     @Override
     public String toString() {
-        return "User{" + "id=" + id + ", username='" + username + '\'' + ", password='" + "*********" + '\''
+        return "User{" + "id=" + id + ", userName='" + username + '\'' + ", password='" + "*********" + '\''
                 + ", firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", email='" + email + '\''
                 + ", roles=" + roles + '}';
     }

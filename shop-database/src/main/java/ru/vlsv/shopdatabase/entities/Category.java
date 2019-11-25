@@ -2,12 +2,12 @@ package ru.vlsv.shopdatabase.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
-import java.util.Set;
 
 @Entity
-@Table(name = "roles")
-public class Role implements Serializable {
+@Table(name = "categories")
+public class Category implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,14 +17,13 @@ public class Role implements Serializable {
     @Column(name = "name", unique = true, nullable = false)
     private String name;
 
-    @ManyToMany(mappedBy = "roles")
-    private Set<User> users;
+    @OneToMany(
+            mappedBy = "category",
+            cascade = CascadeType.ALL)
+    private List<Product> products;
 
-    public Role() {
-    }
+    public Category() {
 
-    public Role(String name) {
-        this.name = name;
     }
 
     public Long getId() {
@@ -43,24 +42,25 @@ public class Role implements Serializable {
         this.name = name;
     }
 
-    public Set<User> getUsers() {
-        return users;
+    public List<Product> getProducts() {
+        return products;
     }
 
-    public void setUsers(Set<User> users) {
-        this.users = users;
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Role role = (Role) o;
-        return name.equals(role.name);
+        Category category = (Category) o;
+        return id.equals(category.id) &&
+                name.equals(category.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(id, name);
     }
 }
