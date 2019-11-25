@@ -33,9 +33,6 @@ public class Product implements Serializable {
     @Column(name = "cost")
     private BigDecimal cost;
 
-    @OneToMany(mappedBy = "product")
-    private List<Purchase> purchases;
-
     @Override
     public String toString() {
         return "Product{" +
