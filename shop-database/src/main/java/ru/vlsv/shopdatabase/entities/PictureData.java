@@ -1,11 +1,16 @@
 package ru.vlsv.shopdatabase.entities;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
 
 @Entity
 @Table(name = "pictures_data")
+@Data
+@NoArgsConstructor
 public class PictureData implements Serializable {
 
     @Id
@@ -17,26 +22,7 @@ public class PictureData implements Serializable {
     @Column(name = "data", nullable = false)
     private byte[] data;
 
-    public PictureData() {
-    }
-
     public PictureData(byte[] data) {
-        this.data = data;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public byte[] getData() {
-        return data;
-    }
-
-    public void setData(byte[] data) {
         this.data = data;
     }
 }
