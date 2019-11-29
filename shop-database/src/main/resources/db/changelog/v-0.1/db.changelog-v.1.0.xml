@@ -130,48 +130,48 @@
         <addUniqueConstraint columnNames="username" constraintName="UC_USERSUSERNAME_COL" tableName="users"/>
     </changeSet>
     <changeSet author="CentnerMan (generated)" id="1574684709906-14">
-        <addUniqueConstraint columnNames="picture_data_id" constraintName="UK_ehsu2tyinopypjox1ijxt3g3c"
+        <addUniqueConstraint columnNames="picture_data_id" constraintName="UK_PICTURE"
                              tableName="pictures"/>
     </changeSet>
     <changeSet author="CentnerMan (generated)" id="1574684709906-15">
         <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="users_roles"
-                                 constraintName="FK2o0jvgh89lemvvo17cbqvdxaa" deferrable="false"
+                                 constraintName="FK_USER" deferrable="false"
                                  initiallyDeferred="false" referencedColumnNames="id" referencedTableName="users"
                                  validate="true"/>
     </changeSet>
     <changeSet author="CentnerMan (generated)" id="1574684709906-16">
         <addForeignKeyConstraint baseColumnNames="brand_id" baseTableName="products"
-                                 constraintName="FKa3a4mpsfdf4d2y6r8ra3sc8mv" deferrable="false"
+                                 constraintName="FK_BRAND" deferrable="false"
                                  initiallyDeferred="false" referencedColumnNames="id" referencedTableName="brands"
                                  validate="true"/>
     </changeSet>
     <changeSet author="CentnerMan (generated)" id="1574684709906-17">
         <addForeignKeyConstraint baseColumnNames="picture_data_id" baseTableName="pictures"
-                                 constraintName="FKe9cv52k04xoy6cj8xy308gnw3" deferrable="false"
+                                 constraintName="FK_PICTURE_DATA" deferrable="false"
                                  initiallyDeferred="false" referencedColumnNames="id"
                                  referencedTableName="pictures_data" validate="true"/>
     </changeSet>
     <changeSet author="CentnerMan (generated)" id="1574684709906-18">
         <addForeignKeyConstraint baseColumnNames="product_id" baseTableName="products_pictures"
-                                 constraintName="FKh3amnci4cl7xcl1al140xw79e" deferrable="false"
+                                 constraintName="FK_PRODUCT" deferrable="false"
                                  initiallyDeferred="false" referencedColumnNames="id" referencedTableName="products"
                                  validate="true"/>
     </changeSet>
     <changeSet author="CentnerMan (generated)" id="1574684709906-19">
         <addForeignKeyConstraint baseColumnNames="role_id" baseTableName="users_roles"
-                                 constraintName="FKj6m8fwv7oqv74fcehir1a9ffy" deferrable="false"
+                                 constraintName="FK_ROLE" deferrable="false"
                                  initiallyDeferred="false" referencedColumnNames="id" referencedTableName="roles"
                                  validate="true"/>
     </changeSet>
     <changeSet author="CentnerMan (generated)" id="1574684709906-20">
         <addForeignKeyConstraint baseColumnNames="picture_id" baseTableName="products_pictures"
-                                 constraintName="FKloucf8ggy74nmdej2jmvttvi4" deferrable="false"
+                                 constraintName="FK_PICTURE" deferrable="false"
                                  initiallyDeferred="false" referencedColumnNames="id" referencedTableName="pictures"
                                  validate="true"/>
     </changeSet>
     <changeSet author="CentnerMan (generated)" id="1574684709906-21">
         <addForeignKeyConstraint baseColumnNames="category_id" baseTableName="products"
-                                 constraintName="FKog2rp4qthbtt2lfyhfo32lsw9" deferrable="false"
+                                 constraintName="FK_CATEGORY" deferrable="false"
                                  initiallyDeferred="false" referencedColumnNames="id" referencedTableName="categories"
                                  validate="true"/>
     </changeSet>

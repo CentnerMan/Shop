@@ -16,13 +16,13 @@
 
     <include file="v-0.1/db.changelog-v.1.0.xml" relativeToChangelogFile="true"/>
 
-    <changeSet author="CentnerMan" id="1">
+    <changeSet author="CentnerMan" id="10">
         <tagDatabase tag="v.1.0"/>
     </changeSet>
 
     <include file="v-0.2/db.changelog-v.2.0.xml" relativeToChangelogFile="true"/>
 
-    <changeSet author="CentnerMan" id="2">
+    <changeSet author="CentnerMan" id="20">
         <tagDatabase tag="v.2.0"/>
     </changeSet>
 
