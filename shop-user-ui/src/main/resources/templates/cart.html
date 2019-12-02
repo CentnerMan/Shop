@@ -17,13 +17,28 @@
 
 <div class="container">
 
-    <div th:replace="~{navigation :: navigation(Home)}" />
+    <div th:replace="~{navigation :: navigation(Cart)}"/>
 
-    <h1>Магазин на Spring</h1>
+    <h2>Корзина</h2>
 
-    <div><h4>Только качественные товары по доступным ценам!</h4></div>
-
+    <table class="table table-hover">
+        <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Название товара</th>
+            <th>Цена</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.id}"/>
+            <td th:text="${product.title}"/>
+            <td th:text="${product.cost}"/>
+        </tr>
+        </tbody>
+    </table>
 </div>
+
 
 </body>
 </html>

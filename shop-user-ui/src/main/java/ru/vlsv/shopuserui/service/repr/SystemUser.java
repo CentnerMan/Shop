@@ -1,27 +1,23 @@
-package ru.vlsv.controllers.repr;
+package ru.vlsv.shopuserui.service.repr;
+
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import ru.vlsv.shopdatabase.entities.Role;
 import ru.vlsv.shopdatabase.entities.User;
 
-import javax.validation.constraints.NotEmpty;
+import java.io.Serializable;
 import java.util.Set;
 
 @Data
 @NoArgsConstructor
-public class UserRepr {
+public class SystemUser implements Serializable {
 
     private Long id;
 
-    @NotEmpty
     private String username;
 
-    @NotEmpty
     private String password;
-
-    @NotEmpty
-    private String matchingPassword;
 
     private String firstName;
 
@@ -31,7 +27,16 @@ public class UserRepr {
 
     private Set<Role> roles;
 
-    public UserRepr(User user) {
+    public SystemUser(String username, String password, String firstName,
+                      String lastName, String email) {
+        this.username = username;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+    }
+
+    public SystemUser(User user) {
         this.id = user.getId();
         this.username = user.getUsername();
         this.password = user.getPassword();
@@ -39,15 +44,5 @@ public class UserRepr {
         this.lastName = user.getLastName();
         this.email = user.getEmail();
         this.roles = user.getRoles();
-    }
-
-    @Override
-    public String toString() {
-        return "UserRepr{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", matchingPassword='" + matchingPassword + '\'' +
-                '}';
     }
 }

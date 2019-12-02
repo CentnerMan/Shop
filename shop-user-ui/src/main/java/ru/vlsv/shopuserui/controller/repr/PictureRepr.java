@@ -1,4 +1,4 @@
-package ru.vlsv.controllers.repr;
+package ru.vlsv.shopuserui.controller.repr;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,5 +21,4 @@ public class PictureRepr implements Serializable {
         this.name = picture.getName();
         this.contentType = picture.getContentType();
     }
-
 }

@@ -1,8 +1,7 @@
-package ru.vlsv.controllers.repr;
+package ru.vlsv.shopuserui.controller.repr;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ru.vlsv.shopdatabase.entities.Category;
 
 import java.io.Serializable;
 
@@ -20,10 +19,5 @@ public class CategoryRepr implements Serializable {
         this.id = id;
         this.name = name;
         this.productCount = productCount;
-    }
-
-    public CategoryRepr(Category category) {
-        this.id = category.getId();
-        this.name = category.getName();
     }
 }
