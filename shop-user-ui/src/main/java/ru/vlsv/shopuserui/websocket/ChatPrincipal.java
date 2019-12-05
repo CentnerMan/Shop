@@ -1,4 +1,4 @@
-package ru.geekbrains.websocket;
+package ru.vlsv.shopuserui.websocket;
 
 import java.security.Principal;
 

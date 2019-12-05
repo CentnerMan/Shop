@@ -1,7 +1,12 @@
-package ru.geekbrains.websocket;
+package ru.vlsv.shopuserui.websocket;
+
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
+@Data
+@NoArgsConstructor
 public class ChatMessage {
 
     private String username;
@@ -10,38 +15,10 @@ public class ChatMessage {
 
     private LocalDateTime localDateTime;
 
-    public ChatMessage() {
-        this.localDateTime = LocalDateTime.now();
-    }
-
     public ChatMessage(String username, String message) {
         this();
         this.username = username;
         this.message = message;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public LocalDateTime getLocalDateTime() {
-        return localDateTime;
-    }
-
-    public void setLocalDateTime(LocalDateTime localDateTime) {
-        this.localDateTime = localDateTime;
     }
 
     @Override

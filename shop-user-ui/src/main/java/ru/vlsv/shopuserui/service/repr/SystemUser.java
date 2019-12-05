@@ -45,4 +45,5 @@ public class SystemUser implements Serializable {
         this.email = user.getEmail();
         this.roles = user.getRoles();
     }
+
 }

@@ -46,7 +46,7 @@ public class User implements Serializable {
 
     public User(String username, String password, String firstName, String lastName, String email,
                 Set<Role> roles) {
-        this.userName = username;
+        this.username = username;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -56,7 +56,7 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return "User{" + "id=" + id + ", userName='" + userName + '\'' + ", password='" + "*********" + '\''
+        return "User{" + "id=" + id + ", userName='" + username + '\'' + ", password='" + "*********" + '\''
                 + ", firstName='" + firstName + '\'' + ", lastName='" + lastName + '\'' + ", email='" + email + '\''
                 + ", roles=" + roles + '}';
     }
