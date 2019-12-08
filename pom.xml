@@ -13,6 +13,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
     </properties>
 
     <groupId>ru.vlsv</groupId>
@@ -24,6 +25,8 @@
         <module>shop-database</module>
         <module>shop-user-ui</module>
         <module>shop-admin-ui</module>
+        <module>shop-eureka</module>
+        <module>shop-zuul</module>
     </modules>
 
     <dependencies>
