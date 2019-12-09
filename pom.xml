@@ -13,6 +13,7 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
     </properties>
 
     <groupId>ru.vlsv</groupId>
@@ -21,9 +22,11 @@
     <version>1.0-SNAPSHOT</version>
 
     <modules>
-        <module>shop-ui</module>
-        <module>shop-admin-ui</module>
         <module>shop-database</module>
+        <module>shop-user-ui</module>
+        <module>shop-admin-ui</module>
+        <module>shop-eureka</module>
+        <module>shop-zuul</module>
     </modules>
 
     <dependencies>
@@ -32,7 +35,23 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
-    </dependencies>
 
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.vintage</groupId>
+                    <artifactId>junit-vintage-engine</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+    </dependencies>
 
 </project>
