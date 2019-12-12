@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: shop-zuul
+
+zuul:
+  ignoredServices: "*"
+  routes:
+    shop-user-ui:
+      path: /**
+      sensitiveHeaders:
+      serviceId: SHOP-USER-UI-SERVICE
+      url: http://localhost:8189
+    shop-admin-ui:
+      path: /admin/**
+      sensitiveHeaders:
+      serviceId: SHOP-ADMIN-UI-SERVICE
+      url: http://localhost:8089
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    fetchRegistry: true
