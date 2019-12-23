@@ -1,6 +1,6 @@
 package ru.vlsv.service;
 
-import  org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.vlsv.controllers.repr.ProductRepr;
 import ru.vlsv.service.model.LineItem;

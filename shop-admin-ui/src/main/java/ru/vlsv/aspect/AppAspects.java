@@ -15,12 +15,12 @@ public class AppAspects {
 
     private static Logger logger = LoggerFactory.getLogger(AppAspects.class);
 
-    @Before("execution(* ru.geekbrains.controllers.*.*(..))")
+    @Before("execution(* ru.vlsv.controllers.*.*(..))")
     public void before(JoinPoint joinPoint) {
         logger.info("Call of {}", joinPoint);
     }
 
-    @Around("@annotation(ru.geekbrains.aspect.TrackTime)")
+    @Around("@annotation(ru.vlsv.aspect.TrackTime)")
     public Object trackTime(ProceedingJoinPoint joinPoint) throws Throwable {
         long start = System.currentTimeMillis();
 

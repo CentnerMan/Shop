@@ -12,12 +12,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-public class ProductServiceTest {
+public class ProductServiceAdminTest {
 
     private ProductService productService;
 
@@ -26,12 +25,11 @@ public class ProductServiceTest {
     @BeforeEach
     public void init() {
         productRepository = mock(ProductRepository.class);
-        productService = new ProductServiceImpl();
-        ((ProductServiceImpl) productService).setProductRepository(productRepository);
+        productService = new ProductServiceImpl(productRepository);
     }
 
     @Test
-    public void findAllAndSplitProductsByTest() {
+    public void findAll() {
         when(productRepository.findAll()).thenReturn(new ArrayList<Product>() {{
             for (long i = 0; i < 10; i++) {
                 Product product = new Product();
@@ -43,11 +41,8 @@ public class ProductServiceTest {
                 add(product);
             }
         }});
-        List<List<ProductRepr>> result = productService.findAllAndSplitProductsBy(4);
+        List<ProductRepr> result = productService.findAll();
         assertNotNull(result);
-        assertEquals(3, result.size());
-        assertEquals(4, result.get(0).size());
-        assertEquals(4, result.get(1).size());
-        assertEquals(2, result.get(2).size());
+        assertEquals(10, result.size());
     }
 }
