@@ -10,6 +10,8 @@ public interface ProductService {
 
     List<ProductRepr> findAll();
 
+    List<ProductRepr> findAllByIdBetween(Long idMin, Long idMax);
+
     ProductRepr findById(Long id);
 
     void deleteById(Long id);

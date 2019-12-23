@@ -38,12 +38,15 @@ public class ProductServiceTest {
                 product.setBrand(new Brand());
                 product.setCategory(new Category());
                 product.setPictures(Collections.emptyList());
-                product.setName("Product");
+                product.setName("Product " + i);
                 product.setId(i);
                 add(product);
             }
         }});
         List<List<ProductRepr>> result = productService.findAllAndSplitProductsBy(4);
+//        for (int i = 0; i < result.size(); i++) {
+//            System.out.println(result.toString());
+//        }
         assertNotNull(result);
         assertEquals(3, result.size());
         assertEquals(4, result.get(0).size());

@@ -31,18 +31,37 @@ public class ProductServiceAdminTest {
     @Test
     public void findAll() {
         when(productRepository.findAll()).thenReturn(new ArrayList<Product>() {{
-            for (long i = 0; i < 10; i++) {
+            for (long i = 0; i < 5; i++) {
                 Product product = new Product();
                 product.setBrand(new Brand());
                 product.setCategory(new Category());
                 product.setPictures(Collections.emptyList());
-                product.setName("Product");
+                product.setName("Product " + i);
                 product.setId(i);
                 add(product);
             }
         }});
         List<ProductRepr> result = productService.findAll();
         assertNotNull(result);
-        assertEquals(10, result.size());
+        assertEquals(5, result.size());
     }
+
+//    @Test
+//    public void findAllByIdBetween(long idMin,long idMax) {
+//        when(productRepository.findAllByIdBetween(idMin, idMax)).thenReturn(new ArrayList<Product>() {{
+//            for (long i = idMin; i < idMax; i++) {
+//                Product product = new Product();
+//                product.setBrand(new Brand());
+//                product.setCategory(new Category());
+//                product.setPictures(Collections.emptyList());
+//                product.setName("Product " + i);
+//                product.setId(i);
+//                add(product);
+//            }
+//        }});
+//        List<ProductRepr> result = productService.findAllByIdBetween(1L, 10L);
+//        assertNotNull(result);
+//        assertEquals(3, result.size());
+//
+//    }
 }
