@@ -26,4 +26,5 @@ public class CategoryRepr implements Serializable {
         this.id = category.getId();
         this.name = category.getName();
     }
+
 }

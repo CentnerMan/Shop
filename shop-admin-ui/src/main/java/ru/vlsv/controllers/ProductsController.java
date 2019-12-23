@@ -14,7 +14,6 @@ import ru.vlsv.service.ProductService;
 import ru.vlsv.shopdatabase.repositories.BrandRepository;
 import ru.vlsv.shopdatabase.repositories.CategoryRepository;
 
-
 @Controller
 public class ProductsController {
 

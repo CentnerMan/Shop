@@ -5,7 +5,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import ru.vlsv.aspect.TrackTime;
 import ru.vlsv.shopdatabase.entities.Picture;
 import ru.vlsv.shopdatabase.repositories.PictureRepository;
 
@@ -24,7 +23,6 @@ public class PictureController {
         this.pictureRepository = pictureRepository;
     }
 
-    @TrackTime
     @GetMapping("/picture/{pictureId}")
     public void adminDownloadProductPicture(@PathVariable("pictureId") Long pictureId,
                                             HttpServletResponse response) throws IOException {
