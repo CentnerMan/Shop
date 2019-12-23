@@ -45,23 +45,4 @@ public class ProductServiceAdminTest {
         assertNotNull(result);
         assertEquals(5, result.size());
     }
-
-//    @Test
-//    public void findAllByIdBetween(long idMin,long idMax) {
-//        when(productRepository.findAllByIdBetween(idMin, idMax)).thenReturn(new ArrayList<Product>() {{
-//            for (long i = idMin; i < idMax; i++) {
-//                Product product = new Product();
-//                product.setBrand(new Brand());
-//                product.setCategory(new Category());
-//                product.setPictures(Collections.emptyList());
-//                product.setName("Product " + i);
-//                product.setId(i);
-//                add(product);
-//            }
-//        }});
-//        List<ProductRepr> result = productService.findAllByIdBetween(1L, 10L);
-//        assertNotNull(result);
-//        assertEquals(3, result.size());
-//
-//    }
 }

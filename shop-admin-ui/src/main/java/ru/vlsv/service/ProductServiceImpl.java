@@ -44,13 +44,6 @@ public class ProductServiceImpl implements ProductService, Serializable {
         return new ProductRepr(productRepository.findById(id).get());
     }
 
-    @Transactional
-    public List<ProductRepr> findAllByIdBetween(Long idMin, Long idMax) {
-        return productRepository.findAllByIdBetween(idMin, idMax).stream()
-                .map(ProductRepr::new)
-                .collect(Collectors.toList());
-    }
-
     @Override
     @Transactional
     public void deleteById(Long id) {
